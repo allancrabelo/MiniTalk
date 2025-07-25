@@ -1,9 +1,4 @@
-#include <unistd.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-# define _POSIX_C_SOURCE 200809L
-
+#include "minitalk.h"
 
 void    ft_handler(int  sig)
 {
