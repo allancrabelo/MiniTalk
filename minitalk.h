@@ -11,4 +11,8 @@
 //Macros
 # define _POSIX_C_SOURCE 200809L
 
+// Functions
+int	ft_atoi(char *str);
+int	ft_strlen(char *str)
+
 # endif
