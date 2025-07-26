@@ -1,7 +1,6 @@
 <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"></img>
 
-
-![Banner](https://github.com/user-attachments/assets/c47456da-25e5-4169-b4d7-c8554d1c6e2b)
+![Banner](https://github.com/user-attachments/assets/7f473754-5821-4e1f-bb3b-f908fd0f5bcb)
 
 # 📡 Minitalk: From Morse Code to Signals
 
