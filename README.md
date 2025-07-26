@@ -102,6 +102,7 @@ This reflects deep understanding of low-level IPC, bit logic, and the UNIX proce
  ┣ 📜 client.c          # Sends string as signals
  ┣ 📜 server.c          # Reconstructs string from signals
  ┣ 📜 minitalk.h        # Shared definitions and prototypes
+ ┣ 📜 utils.c           # Extra Functions
  ┣ 📜 Makefile
 ```
 
