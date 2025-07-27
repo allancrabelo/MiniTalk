@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
+/*   By: aaugusto <aaugusto@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:17:16 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/07/26 15:56:19 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/07/27 10:29:38 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,23 @@ void	send_size(int pid, int size)
 
 void	send_message(int pid, char *str, int size)
 {
-	int	i;
-	int	x;
+	int				i;
+	int				bit;
+	unsigned char	c;
 
 	i = 0;
 	while(i < size)
 	{
-		x = 8;
-		while (x > 0)
+		c =(unsigned char)str[i];
+		bit = 8;
+		while (bit > 0)
 		{
-			if (str[i] & 0b10000000)
+			if (c & 0b10000000)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			x--;
+			c = c << 1;
+			bit--;
 			usleep(100);
 		}
 		i++;	
@@ -57,7 +60,7 @@ int	main(int argc, char **argv)
 	int		len;
 
 	if (argc != 3)
-		return (write(2,"Error! Usage: ./client <PID> <Message\n>", 39));
+		return (write(2,"Error! Usage: ./client <PID> <Message>\n", 39));
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
 	len = ft_strlen(str);

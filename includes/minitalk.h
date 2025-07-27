@@ -15,5 +15,8 @@
 int		ft_atoi(char *str);
 int		ft_strlen(char *str);
 void	ft_putstr_fd(char *str, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int i, int fd);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 # endif
