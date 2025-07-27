@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaugusto <aaugusto@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:17:16 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/07/27 10:29:38 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/07/27 16:36:24 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,22 @@ void	send_size(int pid, int size)
 
 void	send_message(int pid, char *str, int size)
 {
-	int				i;
-	int				bit;
-	unsigned char	c;
+	int	i;
+	int	x;
 
 	i = 0;
+	x = 0;
 	while(i < size)
 	{
-		c =(unsigned char)str[i];
-		bit = 8;
-		while (bit > 0)
+		x = 8;
+		while (x > 0)
 		{
-			if (c & 0b10000000)
+			if (str[i] & 0b10000000)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			c = c << 1;
-			bit--;
+			str[i] = str[i] << 1;
+			x--;
 			usleep(100);
 		}
 		i++;	

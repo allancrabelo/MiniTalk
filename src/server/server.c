@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaugusto <aaugusto@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:19:14 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/07/27 10:28:27 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/07/27 16:39:09 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-#include <stdio.h>
 
 static int	g_size = 0;
 
