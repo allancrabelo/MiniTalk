@@ -6,7 +6,7 @@
 /*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:19:14 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/07/27 16:39:09 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/07/27 16:41:53 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,21 @@ char	*ft_printfree(char *str)
 	str[g_size] = '\0';
 	ft_putstr_fd("Message: ", 1);
 	ft_putstr_fd(str, 1);
+	ft_putchar_fd('\n', 1);
 	free (str);
 	g_size = 0;
 	return (NULL);
+}
+
+char	*ft_create(int size)
+{
+	char	*str;
+
+	str = NULL;
+	str = ft_calloc((size + 1), sizeof(char));
+	if (!str)
+		return (NULL);
+	return (str);
 }
 
 void	handler_size(int sig)
@@ -43,17 +55,6 @@ void	handler_size(int sig)
 		bitcount = 0;
 		size = 0;
 	}
-}
-
-char	*ft_create(int size)
-{
-	char	*str;
-
-	str = NULL;
-	str = calloc((size + 1), sizeof(char));
-	if (!str)
-		return (NULL);
-	return (str);
 }
 
 void	handler_message(int sig)
