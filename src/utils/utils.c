@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/30 07:00:39 by aaugusto          #+#    #+#             */
+/*   Updated: 2025/07/30 07:01:18 by aaugusto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
 int	ft_atoi(char *str)
@@ -9,7 +21,7 @@ int	ft_atoi(char *str)
 	sign = 1;
 	result = 0;
 	i = 0;
-	while(str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -59,7 +71,6 @@ void	ft_putnbr_fd(int i, int fd)
 		ft_putchar_fd('-', fd);
 		i *= -1;
 	}
-
 	if (i > 9)
 		ft_putnbr_fd(i / 10, fd);
 	ft_putchar_fd(i % 10 + '0', fd);

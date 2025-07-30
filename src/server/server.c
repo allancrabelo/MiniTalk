@@ -6,7 +6,7 @@
 /*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:19:14 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/07/27 16:41:53 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/07/30 07:00:25 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	handler_size(int sig)
 {
 	static int	size = 0;
 	static int	bitcount = 0;
-	
+
 	if (sig == SIGUSR2)
 		size = size << 1;
 	else
@@ -63,10 +63,10 @@ void	handler_message(int sig)
 	static int	i = 0;
 	static char	*str = NULL;
 	static int	j = 0;
-	
+
 	if (sig == SIGUSR2)
 		c = c << 1;
-	else	
+	else
 		c = (c << 1) | 1;
 	i++;
 	if (i == 8)

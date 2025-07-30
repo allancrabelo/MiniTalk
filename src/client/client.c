@@ -6,7 +6,7 @@
 /*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 10:17:16 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/07/27 16:36:24 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/07/30 06:59:52 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	send_message(int pid, char *str, int size)
 
 	i = 0;
 	x = 0;
-	while(i < size)
+	while (i < size)
 	{
 		x = 8;
 		while (x > 0)
@@ -48,7 +48,7 @@ void	send_message(int pid, char *str, int size)
 			x--;
 			usleep(100);
 		}
-		i++;	
+		i++;
 	}
 }
 
@@ -59,7 +59,7 @@ int	main(int argc, char **argv)
 	int		len;
 
 	if (argc != 3)
-		return (write(2,"Error! Usage: ./client <PID> <Message>\n", 39));
+		return (write(2, "Error! Usage: ./client <PID> <Message>\n", 39));
 	pid = ft_atoi(argv[1]);
 	str = argv[2];
 	len = ft_strlen(str);
