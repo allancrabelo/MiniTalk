@@ -5,12 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 07:00:39 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/07/30 07:01:18 by aaugusto         ###   ########.fr       */
+/*   Created: 2025/08/08 15:00:10 by aaugusto          #+#    #+#             */
+/*   Updated: 2025/08/08 17:07:35 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../../includes/minitalk.h"
+
+void	ft_putstr_fd(char *str, int fd)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(fd, &str[i], 1);
+		i++;
+	}
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	ft_putchar_fd(n % 10 + '0', fd);
+}
 
 int	ft_atoi(char *str)
 {
@@ -18,9 +54,9 @@ int	ft_atoi(char *str)
 	int	result;
 	int	i;
 
+	i = 0;
 	sign = 1;
 	result = 0;
-	i = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
@@ -37,41 +73,9 @@ int	ft_atoi(char *str)
 	return (sign * result);
 }
 
-int	ft_strlen(char *str)
+int	ft_isdigit(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void	ft_putstr_fd(char *str, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(fd, &str[i], 1);
-		i++;
-	}
-}
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-void	ft_putnbr_fd(int i, int fd)
-{
-	if (i < 0)
-	{
-		ft_putchar_fd('-', fd);
-		i *= -1;
-	}
-	if (i > 9)
-		ft_putnbr_fd(i / 10, fd);
-	ft_putchar_fd(i % 10 + '0', fd);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

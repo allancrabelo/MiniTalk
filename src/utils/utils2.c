@@ -5,26 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/27 07:49:26 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/07/30 06:58:10 by aaugusto         ###   ########.fr       */
+/*   Created: 2025/08/08 17:21:57 by aaugusto          #+#    #+#             */
+/*   Updated: 2025/08/09 10:11:11 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../../includes/minitalk.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+size_t	ft_strlen(char *str)
 {
-	char	*ptr;
 	size_t	i;
 
 	i = 0;
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	while (i < nmemb * size)
-	{
-		ptr[i] = 0;
+	while (str[i])
 		i++;
-	}
-	return ((void *)ptr);
+	return (i);
+}
+
+bool	strempty(char *str)
+{
+	if (str[0] == '\0')
+		return (true);
+	return (false);
 }
