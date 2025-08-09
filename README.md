@@ -84,8 +84,13 @@ Prints out the full message once received.
 It’s a bit ballet.
 And you’re the choreographer.
 
-## 🏅 100% Performance in the Project
+## 🏅 125% Performance in the Project
 I achieved a 100% score in minitalk by meeting every technical and bonus requirement:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b7a291d5-2d86-4f94-af95-c6cf1d3594b7" alt="Intra Projects minitalk" />
+</p>
+
 
 ```
 ✅ Asynchronous signal handling using sigaction
