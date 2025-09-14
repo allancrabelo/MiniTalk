@@ -6,7 +6,7 @@
 /*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 14:27:42 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/08/08 18:27:18 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/08/09 10:47:58 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@
  */
 static int	ft_print_error(char *str)
 {
-	ft_putstr_fd(RED "[ERROR]" RESET "\n", 2);
+	ft_putstr_fd(RED "[ERROR]" RESET, 2);
 	ft_putstr_fd(YELLOW, 2);
 	ft_putstr_fd(str, 2);
 	ft_putstr_fd(RESET, 2);
-	ft_putchar_fd('\n', 2);
 	return (1);
 }
 

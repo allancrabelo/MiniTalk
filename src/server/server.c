@@ -6,7 +6,7 @@
 /*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 14:27:44 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/08/08 17:37:12 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/08/09 10:51:30 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	main(void)
 	action.sa_sigaction = ft_handle_sig;
 	sigaction(SIGUSR1, &action, NULL);
 	sigaction(SIGUSR2, &action, NULL);
-	ft_putstr_fd("Server PID: ", 1);
+	ft_putstr_fd(GREEN "Server PID: " RESET, 1);
 	ft_putnbr_fd (srv_pid, 1);
 	ft_putchar_fd('\n', 1);
 	while (1)

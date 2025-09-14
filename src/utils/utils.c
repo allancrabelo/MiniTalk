@@ -6,7 +6,7 @@
 /*   By: aaugusto <<aaugusto@student.42porto.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 15:00:10 by aaugusto          #+#    #+#             */
-/*   Updated: 2025/08/08 17:07:35 by aaugusto         ###   ########.fr       */
+/*   Updated: 2025/08/09 10:43:54 by aaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_putstr_fd(char *str, int fd)
 		write(fd, &str[i], 1);
 		i++;
 	}
+	write(1, "\n", 1);
 }
 
 void	ft_putchar_fd(char c, int fd)
